@@ -1,12 +1,15 @@
+require('newrelic');
 const express = require('express');
 const path = require('path');
 const axios = require('axios');
+const morgan = require('morgan');
 
 const app = express();
 const PORT = 8000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/products', express.static(path.join(__dirname, 'public')));
+app.use(morgan('dev'));
 
 app.get('/products/:productId', (req, res) => {
   res.sendFile(path.join(__dirname, '/public/index.html'));
