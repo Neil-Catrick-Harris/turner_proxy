@@ -13,7 +13,7 @@ app.get('/products/:productId', (req, res) => {
 });
 
 app.get('/api/reviews/products/:productId', (req, res) => {
-  axios.get(`http://localhost:3003/api/reviews/products/${req.param('productId')}`).then((results) => {
+  axios.get(`http://localhost:3003/api/reviews/products/${req.params.productId}`).then((results) => {
     res.send(results.data);
   }).catch((error) => {
     res.send(error);
@@ -21,7 +21,7 @@ app.get('/api/reviews/products/:productId', (req, res) => {
 })
 
 app.get('/api/productOptions/products/:productId', (req, res) => {
-  axios.get(`http://localhost:3000/api/productOptions/products/${req.param('productId')}`).then((results) => {
+  axios.get(`http://localhost:3000/api/productOptions/products/${req.params.productId}`).then((results) => {
     res.send(results.data);
   }).catch((error) => {
     res.send(error);
@@ -29,7 +29,7 @@ app.get('/api/productOptions/products/:productId', (req, res) => {
 })
 
 app.get('/api/similarProducts/products/:productId', (req, res) => {
-  axios.get(`http://localhost:3001/api/similarProducts/products/${req.param('productId')}`).then((results) => {
+  axios.get(`http://localhost:3001/api/similarProducts/products/${req.params.productId}`).then((results) => {
     res.send(results.data);
   }).catch((error) => {
     res.send(error);
@@ -37,7 +37,7 @@ app.get('/api/similarProducts/products/:productId', (req, res) => {
 })
 
 app.get('/api/productView/products/:productId', (req, res) => {
-  axios.get(`http://localhost:3002/api/productView/products/${req.param('productId')}`).then((results) => {
+  axios.get(`http://localhost:3002/api/productView/products/${req.params.productId}`).then((results) => {
     res.send(results.data);
   }).catch((error) => {
     res.send(error);
