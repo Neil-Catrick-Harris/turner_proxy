@@ -40,7 +40,7 @@ app.get('/api/similarProducts/products/:productId', (req, res) => {
 })
 
 app.get('/api/productView/products/:productId', (req, res) => {
-  axios.get(`http://localhost:3002/api/productView/products/${req.params.productId}`).then((results) => {
+  axios.get(`http://13.57.36.101:3002/api/productView/products/${req.params.productId}`).then((results) => {
     res.send(results.data);
   }).catch((error) => {
     res.send(error);
